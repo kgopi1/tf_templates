@@ -7,6 +7,7 @@ jobs:
     steps:
       - name: mulple line commands
         run: |
+          echo "Hello world"
           ls -la
           env
         working-directory: .
