@@ -5,6 +5,10 @@ jobs:
   triage:
     runs-on: ubuntu-latest
     steps:
+
+      - name: checkout
+        uses: actions/checkout@v3
+
       - name: mulple line commands
         run: |
           echo "Hello world"
