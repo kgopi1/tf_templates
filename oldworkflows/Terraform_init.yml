@@ -1,0 +1,23 @@
+name: "Terraform niti"
+
+on:
+  workflow_call:
+
+jobs:
+  terraform-init:
+    name: "Terraform init"
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      # Checkout the repository to the GitHub Actions runner
+
+      - name: "Terraform Init"
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 0.14.8
+          tf_actions_subcommand: "init"

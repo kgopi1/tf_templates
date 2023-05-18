@@ -1,0 +1,10 @@
+on:
+  workflow_call:
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: mulple line commands
+        run: |
+          ls -la
