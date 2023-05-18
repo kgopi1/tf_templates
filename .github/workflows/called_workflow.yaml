@@ -8,3 +8,4 @@ jobs:
       - name: mulple line commands
         run: |
           ls -la
+          env
