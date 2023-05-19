@@ -27,7 +27,8 @@ jobs:
     - name: get-tf-version
       run: |
         terraform --version
-        ls -la 
+        ls -la
+        env | grep ARM
 
     - run: terraform init
       working-directory: ${{ inputs.working_dir }}
