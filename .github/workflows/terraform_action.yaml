@@ -4,6 +4,9 @@ on:
       working_dir:
         type: string
         default: .
+      action:
+        type: string
+        default: 'init'
 
 env:
   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
@@ -34,5 +37,5 @@ jobs:
         env | grep ARM
         echo ${{ secrets.SUPER }}
 
-    - run: terraform init
+    - run: terraform ${{ inputs.action }}
       working-directory: ${{ inputs.working_dir }}
