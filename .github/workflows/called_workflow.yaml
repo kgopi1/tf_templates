@@ -1,17 +1,21 @@
 on:
   workflow_call:
+    inputs:
+      msg:
+        required: true
+        type: string
+        default: 'Gopi'
 
 jobs:
   triage:
     runs-on: ubuntu-latest
     steps:
-
       - name: checkout
         uses: actions/checkout@v3
 
       - name: mulple line commands
         run: |
-          echo "Hello world"
+          echo ${{ inputs.msg }}
           ls -la
           env
         working-directory: .
