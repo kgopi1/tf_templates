@@ -15,7 +15,10 @@ jobs:
       with:
         terraform_version: 1.1.7
 
-    - run: terraform --version
+    - name: get-tf-version
+      run: |
+        terraform --version
+        ls -la 
 
     - run: terraform init
       working-directory: ${{ inputs.working_dir }}
