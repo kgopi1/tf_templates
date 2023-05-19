@@ -13,12 +13,10 @@ env:
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
   ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
   ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-  ARM_NAME: "Gopi GH Actions"
-  SUPER: ${{ secrets.SUPER }}
 
 
 jobs:
-  init_workflow:
+  tf_workflow:
     runs-on: ubuntu-latest
     steps:
 
@@ -36,6 +34,9 @@ jobs:
         env | grep SUPER
         env | grep ARM
         echo ${{ secrets.SUPER }}
+
+    - run: terraform init
+      working-directory: ${{ inputs.working_dir }}
 
     - run: terraform ${{ inputs.action }}
       working-directory: ${{ inputs.working_dir }}
