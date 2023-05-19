@@ -31,9 +31,9 @@ jobs:
       run: |
         terraform --version
         ls -la
-        env | grep SUPER
-        env | grep ARM
-        echo ${{ secrets.SUPER }}
+        # env | grep SUPER
+        # env | grep ARM
+        # echo ${{ secrets.SUPER }}
 
     - run: terraform init
       working-directory: ${{ inputs.working_dir }}
